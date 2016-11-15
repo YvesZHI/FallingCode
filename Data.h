@@ -66,7 +66,7 @@ public:
 					{
 						color = color_head;
 					}
-					else if (len - delta == 1)
+					else if (len - delta == 1) // this should be "1.0*delta/pos<0.7" but this calculation is too heavy
 					{
 						color = color_tail;
 					}
