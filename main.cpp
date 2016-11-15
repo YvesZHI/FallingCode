@@ -39,7 +39,6 @@ int main(int argc, char ** argv)
 	{
 		std::cerr<<"Error"<<std::endl;
 	}
-
 	SysTool::finish();
 
 

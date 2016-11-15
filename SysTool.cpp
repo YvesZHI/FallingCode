@@ -6,8 +6,9 @@ const int SysTool::COLOR_HEAD{255};
 const int SysTool::COLOR_BODY{46};
 const int SysTool::COLOR_TAIL{2};
 const int SysTool::COLOR_EMPTY{COLOR_BLACK};
-const int SysTool::TIME_LOW{70};
+const int SysTool::TIME_LOW{0};
 const int SysTool::TIME_HIGH{300};
+const int SysTool::TIME_DELTA{30};
 
 
 int SysTool::getCols()

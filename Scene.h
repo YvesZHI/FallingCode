@@ -31,11 +31,11 @@ public:
 			}
 			else if (ch == 'j')
 			{
-				millisec = (millisec == SysTool::TIME_LOW) ? millisec : millisec - 10;
+				millisec = (millisec == SysTool::TIME_LOW) ? millisec : millisec - SysTool::TIME_DELTA;
 			}
 			else if (ch == 'k')
 			{
-				millisec = (millisec == SysTool::TIME_HIGH) ? millisec : millisec + 10;
+				millisec = (millisec == SysTool::TIME_HIGH) ? millisec : millisec + SysTool::TIME_DELTA;
 			}
 			showScene();
 			std::for_each(data.begin(), data.end(), [&](Data & d){ d.refresh(generator, SysTool::COLOR_HEAD, SysTool::COLOR_BODY, SysTool::COLOR_TAIL, SysTool::COLOR_EMPTY, std::forward<StringType>(st)...); });

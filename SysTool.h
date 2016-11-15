@@ -21,6 +21,7 @@ public:
 	const static int COLOR_EMPTY;
 	const static int TIME_LOW;
 	const static int TIME_HIGH;
+	const static int TIME_DELTA;
 };
 
 #endif
