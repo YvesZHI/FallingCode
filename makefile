@@ -3,9 +3,9 @@ cflags:=-lncurses
 
 TARGET:=matrix.out
 CPPFILES:=$(wildcard *.cpp)
+OBJDIRECTORY:=.obj
 #OBJFILES:=$(CPPFILES:.cpp=.o)
-OBJFILES:=$(addprefix obj/,$(notdir $(CPPFILES:.cpp=.o)))
-OBJDIRECTORY:=obj
+OBJFILES:=$(addprefix $(OBJDIRECTORY)/,$(notdir $(CPPFILES:.cpp=.o)))
 
 
 .PHONY: all
@@ -21,7 +21,7 @@ $(OBJDIRECTORY)/%.o: %.cpp
 #%.o: %.cpp
 	$(g++11) -c -o $@ $< -g
 
--include $(addprefix obj/,$(notdir $(CPPFILES:.cpp=.d)))
+-include $(addprefix $(OBJDIRECTORY)/,$(notdir $(CPPFILES:.cpp=.d)))
 
 
 .PHONY: clean

@@ -1,15 +1,15 @@
 #include "Scene.h"
 
 
-Scene::Scene(int cols, int lines, int time) : COLS{cols}, generator{lines}, millisec(time), scene(lines, nullptr), data(cols, Data(lines, Char(Generator::EMPTY, SysTool::COLOR_EMPTY)))
+Scene::Scene(int cols, int lines, int time) : COLS{cols}, generator{lines}, millisec(time), scene(lines, nullptr), column(cols, Column(lines, Char(Generator::EMPTY, SysTool::COLOR_EMPTY)))
 {
 	std::for_each(scene.begin(), scene.end(), [=](Char **& p){ p = new Char *[cols]; });
-	for (int i = 0; i < data.size(); ++i)
+	for (int i = 0; i < column.size(); ++i)
 	{
-		data[i].init(generator);
+		column[i].init(generator);
 		for (int j = 0; j < scene.size(); ++j)
 		{
-			scene[j][i] = const_cast<Char *>(data[i].getElement(lines - j - 1));
+			scene[j][i] = const_cast<Char *>(column[i].getElement(lines - j - 1));
 		}
 	}
 }

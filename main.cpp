@@ -20,10 +20,8 @@ int main(int argc, char ** argv)
 	std::cout<<"|                                        |"<<std::endl;
 	std::cout<<"|                                        |"<<std::endl;
 	std::cout<<"------------------------------------------"<<std::endl;
+
 	std::cin.get();
-
-
-
 
 	SysTool::init();
 	Scene scene(SysTool::getCols(), SysTool::getLines());

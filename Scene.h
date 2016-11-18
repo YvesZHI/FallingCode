@@ -1,7 +1,7 @@
 #ifndef SCENE_H_
 #define SCENE_H_
 
-#include "Data.h"
+#include "Column.h"
 #include "Generator.h"
 #include "SysTool.h"
 #include <iostream>
@@ -38,7 +38,7 @@ public:
 				millisec = (millisec == SysTool::TIME_HIGH) ? millisec : millisec + SysTool::TIME_DELTA;
 			}
 			showScene();
-			std::for_each(data.begin(), data.end(), [&](Data & d){ d.refresh(generator, SysTool::COLOR_HEAD, SysTool::COLOR_BODY, SysTool::COLOR_TAIL, SysTool::COLOR_EMPTY, std::forward<StringType>(st)...); });
+			std::for_each(column.begin(), column.end(), [&](Column & d){ d.refresh(generator, SysTool::COLOR_HEAD, SysTool::COLOR_BODY, SysTool::COLOR_TAIL, SysTool::COLOR_EMPTY, std::forward<StringType>(st)...); });
 			std::this_thread::sleep_for(std::chrono::milliseconds(millisec));
 		}
 	}
@@ -46,7 +46,7 @@ private:
 	const int COLS;
 	Generator generator;
 	vector<Char **> scene;
-	vector<Data> data;
+	vector<Column> column;
 	int millisec;
 
 	void showScene();

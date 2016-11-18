@@ -1,5 +1,5 @@
-#ifndef DATA_H_
-#define DATA_H_
+#ifndef COLUMN_H_
+#define COLUMN_H_
 
 #include "String.h"
 #include "Generator.h"
@@ -7,16 +7,16 @@
 #include <deque>
 
 
-class Data
+class Column
 {
 public:
-	Data();
-	Data(int, const Char &);
+	Column();
+	Column(int, Char);
 	void init(Generator &);
 
 	const Char * getElement(int pos) const
 	{
-		return &data[pos];
+		return &column[pos];
 	}
 
 	char getChar(int pos, const string & s = "string by default")
@@ -40,11 +40,11 @@ public:
 			}
 		}
 		const auto & it = pieces.front();
-		if (it.getLen() + data.size() == it.getPos() + 1)
+		if (it.getLen() + column.size() == it.getPos() + 1)
 		{
 			pieces.pop_front();
 		}
-		int size = data.size();
+		int size = column.size();
 		int pos, len, head, num, color, delta;
 		constexpr int SIZE = sizeof...(st);
 		for (auto it = pieces.begin(); it != pieces.end(); ++it)
@@ -56,7 +56,7 @@ public:
 			delta = pos - head;
 			if (it->isEmpty())
 			{
-				data[size - 1 - head] = Char(generator.EMPTY, color_empty);
+				column[size - 1 - head] = Char(generator.EMPTY, color_empty);
 			}
 			else
 			{
@@ -76,11 +76,11 @@ public:
 					}
 					if (SIZE == 0)
 					{
-						data[size - 1 - head--] = Char(generator.generateChar(), color);
+						column[size - 1 - head--] = Char(generator.generateChar(), color);
 					}
 					else
 					{
-						data[size - 1 - head--] = Char(getChar((pos + 1 > size) ? (pos - size + 1 + i) : i, std::forward<StringType>(st)...), color);
+						column[size - 1 - head--] = Char(getChar((pos + 1 > size) ? (pos - size + 1 + i) : i, std::forward<StringType>(st)...), color);
 					}
 					++delta;
 				}
@@ -90,7 +90,7 @@ public:
 	}
 private:
 	std::deque<String> pieces;
-	std::vector<Char> data;
+	std::vector<Char> column;
 
 	bool needNewString() const;
 };
