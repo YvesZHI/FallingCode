@@ -21,7 +21,7 @@ Generator::Generator()
 	// nothing to do
 }
 
-Generator::Generator(int lines, float r) : e{}, bdStrOrEmpty(r), uiCode(0, codeLib.size() - 1), uiLenString(lines / 9, lines * 3 / 4), uiLenEmpty(lines / 2, lines * 3 / 2)
+Generator::Generator(int lines, float r) : e(time(0)), bdStrOrEmpty(r), uiCode(0, codeLib.size() - 1), uiLenString(lines / 9, lines * 3 / 4), uiLenEmpty(lines / 2, lines * 3 / 2)
 {
 	// nothing to do
 }
