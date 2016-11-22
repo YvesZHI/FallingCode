@@ -3,12 +3,13 @@
 
 
 const int SysTool::COLOR_HEAD{255};
-const int SysTool::COLOR_BODY{46};
 const int SysTool::COLOR_TAIL{2};
 const int SysTool::COLOR_EMPTY{COLOR_BLACK};
 const int SysTool::TIME_LOW{0};
 const int SysTool::TIME_HIGH{300};
 const int SysTool::TIME_DELTA{30};
+
+int SysTool::colorBody{46};
 
 
 int SysTool::getCols()
@@ -49,7 +50,7 @@ void SysTool::init()
 	noecho();
 	start_color();
 	init_pair(COLOR_HEAD, COLOR_HEAD, COLOR_EMPTY);
-	init_pair(COLOR_BODY, COLOR_BODY, COLOR_EMPTY);
+	init_pair(colorBody, colorBody, COLOR_EMPTY);
 	init_pair(COLOR_TAIL, COLOR_TAIL, COLOR_EMPTY);
 }
 
@@ -58,7 +59,17 @@ void SysTool::setColor(int color)
 	attron(COLOR_PAIR(color));
 }
 
-void SysTool::finish()
+void SysTool::setColorBody(int cb)
+{
+	colorBody = cb;
+}
+
+int SysTool::getColorBody()
+{
+	return colorBody;
+}
+
+void SysTool::finalize()
 {
 	endwin();
 }

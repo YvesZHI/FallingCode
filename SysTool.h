@@ -13,15 +13,18 @@ public:
 	static int getchNonBlocking();
 	static void init();
 	static void setColor(int);
-	static void finish();
+	static int getColorBody();
+	static void setColorBody(int);
+	static void finalize();
 	
 	const static int COLOR_HEAD;
-	const static int COLOR_BODY;
 	const static int COLOR_TAIL;
 	const static int COLOR_EMPTY;
 	const static int TIME_LOW;
 	const static int TIME_HIGH;
 	const static int TIME_DELTA;
+private:
+	static int colorBody;
 };
 
 #endif

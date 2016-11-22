@@ -23,21 +23,56 @@ int main(int argc, char ** argv)
 
 	std::cin.get();
 
-	SysTool::init();
-	Scene scene(SysTool::getCols(), SysTool::getLines());
 	if (argc == 1)
 	{
+		SysTool::init();
+		Scene scene(SysTool::getCols(), SysTool::getLines());
 		scene.execute();
 	}
 	else if (argc == 2)
 	{
+		std::string arg(argv[1]);
+		bool isColor = true;
+		for (auto it : arg)
+		{
+			if (!std::isdigit(it))
+			{
+				isColor = false;
+				break;
+			}
+		}
+		if (isColor)
+		{
+			std::istringstream iss(argv[1]);
+			int color;
+			iss >> color;
+			SysTool::setColorBody(color);
+			SysTool::init();
+			Scene scene(SysTool::getCols(), SysTool::getLines());
+			scene.execute();
+		}
+		else
+		{
+			SysTool::init();
+			Scene scene(SysTool::getCols(), SysTool::getLines());
+			scene.execute(argv[1]);	
+		}
+	}
+	else if (argc == 3)
+	{
+		std::istringstream iss(argv[2]);
+		int color;
+		iss >> color;
+		SysTool::setColorBody(color);
+		SysTool::init();
+		Scene scene(SysTool::getCols(), SysTool::getLines());
 		scene.execute(argv[1]);
 	}
 	else
 	{
 		std::cerr<<"Error"<<std::endl;
 	}
-	SysTool::finish();
+	SysTool::finalize();
 
 
 	return EXIT_SUCCESS;
