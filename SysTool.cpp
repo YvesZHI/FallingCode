@@ -49,9 +49,10 @@ void SysTool::init()
 	timeout(0);
 	noecho();
 	start_color();
-	init_pair(COLOR_HEAD, COLOR_HEAD, COLOR_EMPTY);
-	init_pair(colorBody, colorBody, COLOR_EMPTY);
-	init_pair(COLOR_TAIL, COLOR_TAIL, COLOR_EMPTY);
+	for (int i = 0; i <= 256; ++i)
+	{
+		init_pair(i, i, COLOR_EMPTY);
+	}
 }
 
 void SysTool::setColor(int color)
