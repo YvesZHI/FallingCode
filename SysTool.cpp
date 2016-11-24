@@ -62,7 +62,7 @@ void SysTool::setColor(int color)
 
 void SysTool::setColorBody(int cb)
 {
-	colorBody = cb;
+	colorBody = cb % 257;
 }
 
 int SysTool::getColorBody()
