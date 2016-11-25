@@ -55,7 +55,7 @@ int main(int argc, char ** argv)
 		{
 			SysTool::init();
 			Scene scene(SysTool::getCols(), SysTool::getLines());
-			scene.execute(argv[1]);	
+			scene.execute(argv[1]);
 		}
 	}
 	else if (argc == 3)
