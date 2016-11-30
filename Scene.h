@@ -13,7 +13,6 @@
 class Scene
 {
 public:
-	~Scene();
 	Scene(int, int, int = SysTool::TIME_LOW);
 
 	template<typename... StringType>

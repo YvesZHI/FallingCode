@@ -14,11 +14,6 @@ Scene::Scene(int cols, int lines, int time) : COLS{cols}, generator{lines}, mill
 	}
 }
 
-Scene::~Scene()
-{
-	//std::for_each(scene.begin(), scene.end(), [](Char **& p){ delete[] p; });
-}
-
 void Scene::showScene()
 {
 	for (int i = 0; i < scene.size(); ++i)
