@@ -7,6 +7,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include <memory>
 
 
 class Scene
@@ -45,7 +46,7 @@ public:
 private:
 	const int COLS;
 	Generator generator;
-	vector<Char **> scene;
+	vector<std::unique_ptr<Char *[]>> scene;
 	vector<Column> column;
 	int millisec;
 

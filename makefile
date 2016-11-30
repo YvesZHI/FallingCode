@@ -1,4 +1,4 @@
-g++11:=g++ -std=c++11 -stdlib=libc++ -MMD -MP
+g++1x:=g++ -std=c++14 -stdlib=libc++ -MMD -MP
 cflags:=-lncurses
 
 TARGET:=matrix.out
@@ -15,11 +15,11 @@ $(OBJDIRECTORY):
 	mkdir -p $(OBJDIRECTORY)
 
 $(TARGET): $(OBJFILES)
-	$(g++11) $(cflags) -o $@ $^ -g
+	$(g++1x) $(cflags) -o $@ $^ -g
 
 $(OBJDIRECTORY)/%.o: %.cpp
 #%.o: %.cpp
-	$(g++11) -c -o $@ $< -g
+	$(g++1x) -c -o $@ $< -g
 
 -include $(addprefix $(OBJDIRECTORY)/,$(notdir $(CPPFILES:.cpp=.d)))
 

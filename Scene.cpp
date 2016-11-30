@@ -1,9 +1,9 @@
 #include "Scene.h"
 
 
-Scene::Scene(int cols, int lines, int time) : COLS{cols}, generator{lines}, millisec(time), scene(lines, nullptr), column(cols, Column(lines, Char(Generator::EMPTY, SysTool::COLOR_EMPTY)))
+Scene::Scene(int cols, int lines, int time) : COLS{cols}, generator{lines}, millisec(time), scene(lines), column(cols, Column(lines, Char(Generator::EMPTY, SysTool::COLOR_EMPTY)))
 {
-	std::for_each(scene.begin(), scene.end(), [=](Char **& p){ p = new Char *[cols]; });
+	std::for_each(scene.begin(), scene.end(), [=](std::unique_ptr<Char *[]> & up){ up = std::make_unique<Char *[]>(cols); });
 	for (int i = 0; i < column.size(); ++i)
 	{
 		column[i].init(generator);
@@ -16,7 +16,7 @@ Scene::Scene(int cols, int lines, int time) : COLS{cols}, generator{lines}, mill
 
 Scene::~Scene()
 {
-	std::for_each(scene.begin(), scene.end(), [](Char **& p){ delete[] p; });
+	//std::for_each(scene.begin(), scene.end(), [](Char **& p){ delete[] p; });
 }
 
 void Scene::showScene()
