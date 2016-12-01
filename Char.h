@@ -2,7 +2,6 @@ class Char
 {
 public:
 	Char(char = '\0', int = -1);
-	Char(const Char &) = default;
 	
 	void setColor(int col)
 	{
