@@ -1,30 +1,36 @@
 g++1x:=g++ -std=c++14 -stdlib=libc++ -MMD -MP
-cflags:=-lncurses
+cflags:= -Wall -lncurses
 
 TARGET:=matrix.out
-CPPFILES:=$(wildcard *.cpp)
-OBJDIRECTORY:=.obj
-#OBJFILES:=$(CPPFILES:.cpp=.o)
-OBJFILES:=$(addprefix $(OBJDIRECTORY)/,$(notdir $(CPPFILES:.cpp=.o)))
+SRS:=$(shell find * -type f -name "*.cpp")
+OBJDIR:=.obj
+OBJ:=$(addprefix $(OBJDIR)/,$(SRS:.cpp=.o))
+BIN:=bin
 
 
-.PHONY: all
-all: $(OBJDIRECTORY) $(TARGET)
+.PHONY: install
+install: $(BIN) $(BIN)/$(TARGET) $(OBJ)
 
-$(OBJDIRECTORY):
-	mkdir -p $(OBJDIRECTORY)
+$(BIN):
+	@echo "Creating bin directory";
+	@mkdir -p $(BIN);
 
-$(TARGET): $(OBJFILES)
-	$(g++1x) $(cflags) -o $@ $^ -g
+$(BIN)/$(TARGET): $(OBJ)
+	$(g++1x) $(cflags) $^ -o $@ -g
 
-$(OBJDIRECTORY)/%.o: %.cpp
-#%.o: %.cpp
+$(OBJ): $(OBJDIR)/%.o: %.cpp
+	@if [ ! -d "$(@D)" ]; then\
+		echo "Creating obj directories"; \
+		mkdir -p "$(@D)";\
+	fi
 	$(g++1x) -c -o $@ $< -g
 
--include $(addprefix $(OBJDIRECTORY)/,$(notdir $(CPPFILES:.cpp=.d)))
+
+-include $(OBJ:.o=.d)
 
 
 .PHONY: clean
 clean:
-	rm -f $(OBJFILES) $(TARGET)
-	rm -rf $(OBJDIRECTORY)
+	@echo "Removing bin and obj";
+	@rm -rf $(BIN);
+	@rm -rf $(OBJDIR);
