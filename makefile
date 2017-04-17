@@ -12,7 +12,7 @@ BIN:=bin
 install: $(BIN) $(BIN)/$(TARGET) $(OBJ)
 
 $(BIN):
-	@echo "Creating bin directory";
+	@echo "creating bin directory";
 	@mkdir -p $(BIN);
 
 $(BIN)/$(TARGET): $(OBJ)
@@ -20,7 +20,7 @@ $(BIN)/$(TARGET): $(OBJ)
 
 $(OBJ): $(OBJDIR)/%.o: %.cpp
 	@if [ ! -d "$(@D)" ]; then\
-		echo "Creating obj directories"; \
+		echo "creating obj directories"; \
 		mkdir -p "$(@D)";\
 	fi
 	$(g++1x) -c -o $@ $< -g
@@ -31,6 +31,6 @@ $(OBJ): $(OBJDIR)/%.o: %.cpp
 
 .PHONY: clean
 clean:
-	@echo "Removing bin and obj";
+	@echo "removing bin and obj";
 	@rm -rf $(BIN);
 	@rm -rf $(OBJDIR);
