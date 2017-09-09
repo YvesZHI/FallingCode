@@ -1,5 +1,5 @@
-g++1x:=g++ -std=c++14 -stdlib=libc++ -MMD -MP
-cflags:= -Wall -lncurses
+g++1x:=g++ -std=c++1y -MMD -MP
+cflags:= -Wall -lncurses -static-libstdc++
 
 TARGET:=matrix.out
 SRS:=$(shell find * -type f -name "*.cpp")

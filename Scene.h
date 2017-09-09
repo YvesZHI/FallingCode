@@ -8,6 +8,7 @@
 #include <thread>
 #include <chrono>
 #include <memory>
+#include<algorithm>
 
 
 class Scene
