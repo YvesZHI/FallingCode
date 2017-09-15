@@ -3,7 +3,7 @@ MATRIX
 
 INTRODUCTION
 -----------------------
-This is a scene of falling code. It just simuates the scene of falling code coming from the film Matrix.
+This is a scene of falling code. It simuates the scene of falling code coming from the film Matrix.
 
 Dependent library
 -----------------------
