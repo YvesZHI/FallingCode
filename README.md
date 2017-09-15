@@ -1,6 +1,7 @@
 This is a scene of falling code (Matrix).
 
 Dependent library: ncurses
+If you want to use another library, you just need to change `SysTool.cpp`.
 
 Installation: `make`
 
