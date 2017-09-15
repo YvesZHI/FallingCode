@@ -7,7 +7,7 @@ This is a scene of falling code. It just simuates the scene of falling code comi
 
 Dependent library
 -----------------------
-ncurses
+ncurses<br>
 If you want to use another library, you just need to change `SysTool.cpp`.
 
 INSTALLATION
