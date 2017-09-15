@@ -1,9 +1,9 @@
-MATRIX
+FallingCode
 =======================
 
 INTRODUCTION
 -----------------------
-This is a scene of falling code. It simuates the scene of falling code coming from the film Matrix.
+It simuates the scene of falling code coming from the film Matrix.
 
 Dependent library
 -----------------------
