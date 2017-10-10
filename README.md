@@ -6,7 +6,7 @@ It simuates the scene of falling code coming from the film Matrix.
 
 ### Dependent library ###
 ncurses<br>
-If you want to use another library, you just need to change `SysTool.cpp` and `makefile`.
+If you want to use another library, you just need to edit `SysTool.cpp` and `makefile`.
 
 ### Installation ###
 Download and execute `make`.
