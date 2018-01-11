@@ -1,5 +1,6 @@
 g++1x:=g++ -std=c++1y -MMD -MP
-cflags:= -Wall -lncurses -static-libstdc++
+CFLAGS:= -Wall -static-libstdc++
+LDLIBS=-lncurses
 
 TARGET:=matrix.out
 SRS:=$(shell find * -type f -name "*.cpp")
@@ -16,7 +17,7 @@ $(BIN):
 	@mkdir -p $(BIN);
 
 $(BIN)/$(TARGET): $(OBJ)
-	$(g++1x) $(cflags) $^ -o $@ -g
+	$(g++1x) $(CFLAGS) $^ -o $@ -g $(LDLIBS)
 
 $(OBJ): $(OBJDIR)/%.o: %.cpp
 	@if [ ! -d "$(@D)" ]; then\
