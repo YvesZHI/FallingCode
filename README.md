@@ -2,7 +2,7 @@ FallingCode
 =======================
 
 ### Introduction ###
-It simuates the scene of falling code coming from the film Matrix.
+Simulation of the scene of falling code coming from the film Matrix.
 
 ![alt text](http://cdn2-europe1.new2.ladmedia.fr/var/europe1/storage/images/europe1/culture/matrix-lorigine-du-code-vert-revelee-3478307/44949452-1-fre-FR/Matrix-l-origine-du-code-vert-revelee.jpg)
 
