@@ -2,7 +2,7 @@ FallingCode
 =======================
 
 ### Introduction ###
-Simulation of the scene of falling code on the terminal (must be a local terminal, ssh remote terminal doesn't work).<br>
+Simulation of the scene of falling code on the terminal (which must be local, ssh remote terminal doesn't work).<br>
 
 
 ![alt text](http://cdn2-europe1.new2.ladmedia.fr/var/europe1/storage/images/europe1/culture/matrix-lorigine-du-code-vert-revelee-3478307/44949452-1-fre-FR/Matrix-l-origine-du-code-vert-revelee.jpg)
