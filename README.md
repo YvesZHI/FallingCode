@@ -21,7 +21,7 @@ Go to the directory `bin` and execute one of the commands as below:
 <br>Besides, the `colorValue` is optional and its range is [0, 255].
 
 
-### additional... ###
+### Additional... ###
 I like to execute `./matrix.out` because the color by default is green.<br>
 
 There is an issue left: I want to set a tail (with a different color) for each column, whose length is 0.3 * lengthOfColumn, but it would be a very heavy calculation (read the comment in the file Column.h) as it's about `double - multiplication`.<br>
