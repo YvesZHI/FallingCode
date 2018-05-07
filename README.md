@@ -9,7 +9,7 @@ Simulation of the scene of falling code on the terminal (which must be local, ss
 
 ### Dependent library ###
 ncurses<br>
-If you want to use another library, you just need to edit `SysTool.cpp` and `makefile`.
+You need to install it by yourself. If you want to use another library, just edit `SysTool.cpp` and `makefile`.
 
 ### Installation ###
 Download and execute `make`.
