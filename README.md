@@ -16,8 +16,8 @@ Download and execute `make`.
 
 ### Execution ###
 Go to the directory `bin` and execute one of the commands as below:
-* `./matrix.out colorValue`. E.g. `./matrix.out 23`.
-* `./matrix.out string colorValue`. E.g. `./matrix.out "hello world!" 122`.
+* `./matrix.out [colorValue]`. E.g. `./matrix.out 23`.
+* `./matrix.out <string> [colorValue]`. E.g. `./matrix.out "hello world!" 122`.
 <br>Besides, the `colorValue` is optional and its range is [0, 255].
 
 ### Attention ###
