@@ -1,3 +1,6 @@
+#ifndef CHAR_H_
+#define CHAR_H_
+
 class Char
 {
 public:
@@ -21,3 +24,5 @@ private:
 	char ch;
 	int color;
 };
+
+#endif
