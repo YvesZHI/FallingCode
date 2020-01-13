@@ -21,7 +21,7 @@ Go to the directory `bin` and execute one of the commands as below:
 <br>Besides, the `colorValue` is optional and its range is [0, 255].
 
 ### Attention ###
-Some `pts`-tpye remote terminal may not work as expected as the coordinate of terminal is transformed by the `pts`-type remote terminal.
+Some `pts`-tpye remote terminal may not work as expected, the reason is that the coordinate of terminal is transformed by the `pts`-type remote terminal.
 
 
 ### Additional... ###
